@@ -1,7 +1,7 @@
 ## Ecommerce project
-___
+
 ### To run the project locally-
-___
+
 ````
 1. Clone the repo
 2. cd comm-backend
