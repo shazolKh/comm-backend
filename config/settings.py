@@ -31,6 +31,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'drf_spectacular',
+    # custom apps
+    'account.apps.AccountConfig',
 ]
 
 MIDDLEWARE = [
@@ -96,6 +98,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'account.CustomUser'
+
 
 # Internationalization
 LANGUAGE_CODE = 'en-us'
@@ -122,8 +126,8 @@ REST_FRAMEWORK = {
 
 # simple jwt settings
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(days=30),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=15),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=5),
     'ROTATE_REFRESH_TOKENS': False,
     'BLACKLIST_AFTER_ROTATION': True,
     'UPDATE_LAST_LOGIN': False,
